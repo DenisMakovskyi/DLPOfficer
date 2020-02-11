@@ -1,0 +1,34 @@
+name: dlp_officer
+description: DLP for stuff
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  shared_preferences: ^0.5.6+1
+
+  json_serializable: ^3.2.5
+
+  http: ^0.12.0+4
+  http_interceptor: ^0.2.0
+
+  bloc: ^3.0.0
+  flutter_bloc: ^3.2.0
+
+  flutter_svg: ^0.17.1
+
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  build_runner: ^1.7.4
+
+flutter:
+  uses-material-design: true
