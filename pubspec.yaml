@@ -24,9 +24,15 @@ dependencies:
 
   cupertino_icons: ^0.1.2
 
+  inject:
+    path: ./vendor/inject.dart/package/inject
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  inject_generator:
+    path: ./vendor/inject.dart/package/inject_generator
 
   build_runner: ^1.7.4
 

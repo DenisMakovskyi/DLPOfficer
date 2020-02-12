@@ -9,8 +9,8 @@ class AuthPreferences {
     return sharedPreferences.getString(KEY_BASIC_AUTH);
   }
 
-  void setBasicAuth(String value) async {
+  void setBasicAuth(String basic) async {
     var sharedPreferences = await SharedPreferences.getInstance();
-    await sharedPreferences.setString(KEY_BASIC_AUTH, value);
+    await sharedPreferences.setString(KEY_BASIC_AUTH, basic);
   }
 }

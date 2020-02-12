@@ -1,10 +1,12 @@
 import 'dart:convert';
+
 import 'package:dlp_officer/env.dart';
 
 class Headers {
   static const String KEY_ACCEPT = "Accept";
   static const String KEY_CONTENT_TYPE = "Content-Type";
   static const String KEY_AUTHORIZATION = "Authorization";
+  static const String KEY_APPLICATION_ID = "X-APPLICATION-ID";
 
   static const String VALUE_APPLICATION_JSON = "application/json";
 }

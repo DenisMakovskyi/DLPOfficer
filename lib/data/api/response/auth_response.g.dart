@@ -6,8 +6,9 @@ part of 'auth_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SignInResponse _$SignInResponseFromJson(Map<String, dynamic> json) {
-  return SignInResponse(
+AuthenticationResponse _$AuthenticationResponseFromJson(
+    Map<String, dynamic> json) {
+  return AuthenticationResponse(
     username: json['username'] as String,
     firstName: json['first_name'] as String,
     lastName: json['last_name'] as String,
@@ -15,7 +16,8 @@ SignInResponse _$SignInResponseFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$SignInResponseToJson(SignInResponse instance) =>
+Map<String, dynamic> _$AuthenticationResponseToJson(
+        AuthenticationResponse instance) =>
     <String, dynamic>{
       'username': instance.username,
       'first_name': instance.firstName,
