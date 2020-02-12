@@ -17,6 +17,5 @@ class AuthenticationResponse {
 
   AuthenticationResponse({this.username, this.firstName, this.lastName, this.shop});
 
-  factory AuthenticationResponse.fromJson(Map<String, dynamic> json) =>
-      _$AuthenticationResponseFromJson(json);
+  factory AuthenticationResponse.fromJson(Map<String, dynamic> json) => _$AuthenticationResponseFromJson(json);
 }

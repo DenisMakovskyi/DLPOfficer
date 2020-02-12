@@ -15,9 +15,7 @@ class BaseShopResponse {
   @JsonKey(name: "coordinates_str")
   final String coordinates;
 
-  BaseShopResponse(
-      {this.id, this.name, this.thumbLogoUrl, this.address, this.coordinates});
+  BaseShopResponse({this.id, this.name, this.thumbLogoUrl, this.address, this.coordinates});
 
-  factory BaseShopResponse.fromJson(Map<String, dynamic> json) =>
-      _$BaseShopResponseFromJson(json);
+  factory BaseShopResponse.fromJson(Map<String, dynamic> json) => _$BaseShopResponseFromJson(json);
 }

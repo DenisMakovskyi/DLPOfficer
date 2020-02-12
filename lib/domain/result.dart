@@ -1,5 +1,4 @@
 class ApiResult<T> {
-
   final int code;
   final T body;
 
