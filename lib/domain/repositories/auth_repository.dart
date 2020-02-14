@@ -7,7 +7,8 @@ import 'package:dlp_officer/data/preferences/preferences.dart';
 import 'package:dlp_officer/utils/api_utils.dart';
 
 abstract class AuthRepository {
-  Future<ApiResult<AuthenticationResponse>> authenticate(String username, String password);
+  Future<ApiResult<AuthenticationResponse>> authenticate(
+      String username, String password);
 }
 
 class AuthRepositoryImpl implements AuthRepository {
@@ -18,7 +19,8 @@ class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(this._authApi, this._authPreferences);
 
   @override
-  Future<ApiResult<AuthenticationResponse>> authenticate(String username, String password) async {
+  Future<ApiResult<AuthenticationResponse>> authenticate(
+      String username, String password) async {
     var basic = basicAuth(username, password);
     var result = await _authApi.authentication(basic);
     if (result.isSuccess()) {

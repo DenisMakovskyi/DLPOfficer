@@ -18,9 +18,9 @@ class AuthInterceptor implements InterceptorContract {
     data.headers[Headers.KEY_ACCEPT] = Headers.VALUE_APPLICATION_JSON;
     data.headers[Headers.KEY_CONTENT_TYPE] = Headers.VALUE_APPLICATION_JSON;
     data.headers[Headers.KEY_APPLICATION_ID] = Constants.APP_ID;
-    if (isNullOrEmpty(data.headers[Headers.KEY_AUTHORIZATION])) {
+    if (data.headers[Headers.KEY_AUTHORIZATION].isNullOrEmpty()) {
       var basicAuth = await _authPreferences.getBasicAuth();
-      if (isNonNullOrEmpty(basicAuth)) {
+      if (basicAuth.isNonNullOrEmpty()) {
         data.headers[Headers.KEY_AUTHORIZATION] = basicAuth;
       }
     }

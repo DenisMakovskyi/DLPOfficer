@@ -12,25 +12,20 @@ class AuthSubmitted extends AuthEvent {
   final String username;
   final String password;
 
-  const AuthSubmitted({
-    @required this.username,
-    @required this.password
-  });
+  const AuthSubmitted({@required this.username, @required this.password});
 
   @override
   List<Object> get props => [username, password];
 }
 
-//-
-
-class AuthPasswordChanged extends AuthEvent {
+class CredentialsTyped extends AuthEvent {
+  final String username;
   final String password;
 
-  const AuthPasswordChanged({@required this.password});
+  const CredentialsTyped({@required this.username, @required this.password});
 
   @override
-  List<Object> get props => [password];
-
-  @override
-  String toString() => 'PasswordChanged { password: $password }';
+  List<Object> get props => [username, password];
 }
+
+class PasswordTogglePressed extends AuthEvent {}

@@ -1,40 +1,34 @@
 enum Flavor { BIG_FAMILY_STAGING, BIG_FAMILY_PRODUCTION }
 
 class Constants {
-  static Map<String, dynamic> configuration;
+  static Map<String, dynamic> _configuration;
 
-  static void setFlavor(Flavor flavor) {
+  static void setDimension(Flavor flavor) {
     switch (flavor) {
       case Flavor.BIG_FAMILY_STAGING:
-        configuration = Configuration.bigFamilyStaging;
+        _configuration = Configuration._bigFamilyStaging;
         break;
-
       case Flavor.BIG_FAMILY_PRODUCTION:
-        configuration = Configuration.bigFamilyProduction;
+        _configuration = Configuration._bigFamilyProduction;
         break;
     }
   }
 
-  static get NAME => configuration[Configuration.NAME];
+  static get APP_ID => _configuration[Configuration.APP_ID];
 
-  static get APP_ID => configuration[Configuration.APP_ID];
-
-  static get HOST_URL => configuration[Configuration.HOST_URL];
+  static get HOST_URL => _configuration[Configuration.HOST_URL];
 }
 
 class Configuration {
-  static const NAME = "NAME";
   static const APP_ID = "APP_ID";
   static const HOST_URL = "HOST_URL";
 
-  static Map<String, dynamic> bigFamilyStaging = {
-    NAME: "Big Family Staging",
+  static Map<String, dynamic> _bigFamilyStaging = {
     APP_ID: "",
     HOST_URL: "https://disloy.com/"
   };
 
-  static Map<String, dynamic> bigFamilyProduction = {
-    NAME: "Big Family Production",
+  static Map<String, dynamic> _bigFamilyProduction = {
     APP_ID: "",
     HOST_URL: "https://uployal.io/"
   };

@@ -11,9 +11,9 @@ class AuthApi {
 
   AuthApi(this._client);
 
-  Future<ApiResult<AuthenticationResponse>> authentication(String basicAuth) async {
-    final response = await _client.post(
-        Endpoints.AUTH,
+  Future<ApiResult<AuthenticationResponse>> authentication(
+      String basicAuth) async {
+    final response = await _client.post(Endpoints.AUTH,
         headers: <String, String>{Headers.KEY_AUTHORIZATION: basicAuth});
     if (response.statusCode == 200) {
       var body = AuthenticationResponse.fromJson(json.decode(response.body));

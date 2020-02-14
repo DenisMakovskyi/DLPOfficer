@@ -26,8 +26,7 @@ class ApiModule {
   @provide
   http.Client provideHttpClient(AuthInterceptor authInterceptor) {
     return HttpClientWithInterceptor.build(
-        interceptors: [authInterceptor],
-        requestTimeout: Duration(seconds: 30));
+        interceptors: [authInterceptor], requestTimeout: Duration(seconds: 30));
   }
 
   @provide
@@ -39,7 +38,8 @@ class ApiModule {
 @module
 class RepositoriesModule {
   @provide
-  AuthRepository provideAuthRepository(AuthApi authApi, AuthPreferences authPreferences) {
+  AuthRepository provideAuthRepository(
+      AuthApi authApi, AuthPreferences authPreferences) {
     return AuthRepositoryImpl(authApi, authPreferences);
   }
 }

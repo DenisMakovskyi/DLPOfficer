@@ -1,1 +1,1 @@
-enum SplashEvent { STARTED }
+enum SplashEvent { STARTED, AUTHENTICATED }

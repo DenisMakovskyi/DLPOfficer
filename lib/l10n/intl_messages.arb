@@ -1,0 +1,44 @@
+{
+  "@@last_modified": "2020-02-14T10:38:13.666151",
+  "@@locale": "en",
+  "authUsername": "Username",
+  "@authUsername": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "authPassword": "Password",
+  "@authPassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "authSignIn": "Sign in",
+  "@authSignIn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "authSigningIn": "Signing in...",
+  "@authSigningIn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dialogActionClose": "Close",
+  "@dialogActionClose": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "error": "Error",
+  "@error": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "requestError": "Request error occurred. Response code: {code}",
+  "@requestError": {
+    "description": "Http status code",
+    "type": "text",
+    "placeholders": {
+      "code": {
+        "example": 400
+      }
+    }
+  }
+}

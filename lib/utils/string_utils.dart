@@ -1,3 +1,5 @@
-bool isNullOrEmpty(String str) => str == null || str.isEmpty;
+extension NullEmptyCheck on String {
+  bool isNullOrEmpty() => this == null || this.isEmpty;
 
-bool isNonNullOrEmpty(String str) => str != null && str.isNotEmpty;
+  bool isNonNullOrEmpty() => this != null && this.isNotEmpty;
+}

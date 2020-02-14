@@ -6,16 +6,18 @@ part 'auth_response.g.dart';
 
 @JsonSerializable(nullable: false)
 class AuthenticationResponse {
-  @JsonKey(name: "username")
+  @JsonKey(name: 'username')
   final String username;
-  @JsonKey(name: "first_name")
+  @JsonKey(name: 'first_name')
   final String firstName;
-  @JsonKey(name: "last_name")
+  @JsonKey(name: 'last_name')
   final String lastName;
-  @JsonKey(name: "shop")
+  @JsonKey(name: 'shop')
   final BaseShopResponse shop;
 
-  AuthenticationResponse({this.username, this.firstName, this.lastName, this.shop});
+  AuthenticationResponse(
+      {this.username, this.firstName, this.lastName, this.shop});
 
-  factory AuthenticationResponse.fromJson(Map<String, dynamic> json) => _$AuthenticationResponseFromJson(json);
+  factory AuthenticationResponse.fromJson(Map<String, dynamic> json) =>
+      _$AuthenticationResponseFromJson(json);
 }

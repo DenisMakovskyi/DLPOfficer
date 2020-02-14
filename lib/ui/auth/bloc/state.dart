@@ -2,79 +2,73 @@ import 'package:meta/meta.dart';
 
 @immutable
 class AuthState {
+  final int code;
   final bool isSuccess;
   final bool isFailure;
   final bool isSubmitting;
-  final bool isPasswordValid;
+  final bool isFormEnabled;
+  final bool isPasswordObscured;
 
-  bool get isFormValid => isPasswordValid;
-
-  AuthState({
-    @required this.isSuccess,
-    @required this.isFailure,
-    @required this.isSubmitting,
-    @required this.isPasswordValid,
-  });
+  AuthState(
+      {@required this.code,
+      @required this.isSuccess,
+      @required this.isFailure,
+      @required this.isSubmitting,
+      @required this.isFormEnabled,
+      @required this.isPasswordObscured});
 
   factory AuthState.empty() {
     return AuthState(
-      isSuccess: false,
-      isFailure: false,
-      isSubmitting: false,
-      isPasswordValid: true
-    );
+        code: 0,
+        isSuccess: false,
+        isFailure: false,
+        isSubmitting: false,
+        isFormEnabled: false,
+        isPasswordObscured: true);
   }
 
   factory AuthState.success() {
     return AuthState(
+        code: 0,
         isSuccess: true,
         isFailure: false,
         isSubmitting: false,
-        isPasswordValid: true
-    );
+        isFormEnabled: true,
+        isPasswordObscured: true);
   }
 
-  factory AuthState.failure() {
+  factory AuthState.failure(int code) {
     return AuthState(
+        code: code,
         isSuccess: false,
         isFailure: true,
         isSubmitting: false,
-        isPasswordValid: true
-    );
+        isFormEnabled: true,
+        isPasswordObscured: true);
   }
 
   factory AuthState.submitting() {
     return AuthState(
+        code: 0,
         isSuccess: false,
         isFailure: false,
         isSubmitting: true,
-        isPasswordValid: true
-    );
+        isFormEnabled: false,
+        isPasswordObscured: true);
   }
 
-
-  AuthState update({
-  bool isPasswordValid
-  }) {
+  AuthState update({bool isFormEnabled, bool isPasswordObscured}) {
     return copyWith(
-      isSuccess: isSuccess,
-      isFailure: isFailure,
-      isSubmitting: isSubmitting,
-      isPasswordValid: isPasswordValid
-    );
+        isFormEnabled: isFormEnabled, isPasswordObscured: isPasswordObscured);
   }
 
-  AuthState copyWith({
-    bool isSuccess,
-    bool isFailure,
-    bool isSubmitting,
-    bool isPasswordValid
-  }) {
+  AuthState copyWith({bool isFormEnabled, bool isPasswordObscured}) {
     return AuthState(
-      isSuccess: isSuccess ?? this.isSuccess,
-      isFailure: isFailure ?? this.isFailure,
-      isSubmitting: isSubmitting ?? this.isSubmitting,
-      isPasswordValid: isPasswordValid ?? this.isPasswordValid
-    );
+        code: this.code,
+        isSuccess: this.isSuccess,
+        isFailure: this.isFailure,
+        isSubmitting: this.isSubmitting,
+        isFormEnabled: isFormEnabled ?? this.isFormEnabled,
+        isPasswordObscured: isPasswordObscured ?? this.isPasswordObscured);
   }
 }
